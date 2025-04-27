@@ -1,0 +1,342 @@
+/* Keyframes for animation */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 45%) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Custom font face */
+@font-face {
+  font-family: my_font;
+  src: url(CanelaCondensed-LightItalic-Trial.otf);
+}
+
+/* Basic styles */
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner styles */
+.Banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.Banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Banner-Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+  z-index: 3;
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.Banner-Content h1.line1,
+.Banner-Content h1.line2 {
+  margin: 0;
+  padding: 0;
+}
+
+.Banner-Content h1.line1 {
+  margin-bottom: 10px;
+}
+
+.Banner-Content h1.line2 {
+  margin-top: 0;
+}
+
+.logo-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 250px;
+  height: 70px;
+  z-index: 1;
+}
+
+/* Button styles */
+
+.btn1,
+.btn2 {
+  position: absolute;
+  top: 0;
+  background-color: #fa080864;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  height: 78px;
+  font-size: large;
+}
+
+.btn1 {
+  right: 0px;
+}
+
+.btn2 {
+  right: 155px;
+}
+
+/* Text content styles */
+.text-content {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text-content .line2 {
+  margin-top: 1px;
+}
+
+.about-heading {
+  color: black;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.text-content p {
+  margin: 0;
+  max-width: 600px;
+  margin-right: 30px;
+}
+
+/* Solid Line Styles */
+.solid-line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  margin-top: 8px;
+  padding: 0;
+  display: block;
+}
+
+/* Three divs container */
+.three-divs {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.three-divs .div-item h2 {
+  color: #a51c30;
+}
+
+.three-divs .div-item p {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Individual div item styles */
+.div-item {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.div-item h2 {
+  margin: 0 0 10px 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.div-item p {
+  margin: 0;
+  color: #666;
+}
+
+/* Explore section */
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+  margin: -60px;
+  padding: 0;
+  position: relative;
+  top: 0px;
+}
+
+.explore h1 {
+  font-size: 2.5em;
+  color: #a51c30;
+  margin: 0;
+}
+
+/* Slider styles */
+.slider {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-slide {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+}
+
+.slider-img {
+  width: 40%;
+  height: auto;
+}
+
+.slider-text {
+  padding: 20px;
+  width: 60%;
+}
+
+/* Additional content area */
+.text-content2 {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+} /* Container for the boxes */
+/* Container for the boxes */
+.boxes-container {
+  display: flex;
+  justify-content: center;
+  /* Center all boxes horizontally */
+  align-items: flex-start;
+  /* Align items at the top */
+  gap: 20px;
+  /* Add space between the boxes */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  /* Keep all boxes in one line */
+}
+
+/* General box styling */
+.box1,
+.box2,
+.box3 {
+  flex: 0 0 300px;
+  /* Fix width for each box */
+  position: relative;
+  margin-bottom: 20px;
+  /* Add margin at the bottom for spacing */
+  text-align: center;
+  background-color: #f9f9f9;
+  /* Optional: Background color for better visibility */
+  padding: 20px;
+  border-radius: 8px;
+  /* Optional: Add border-radius for a rounded box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow for depth */
+}
+
+/* Image styling */
+.box1 img,
+.box2 img,
+.box3 img {
+  width: 100%;
+  /* Ensure images fill the box width */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 8px;
+  /* Optional: Match border-radius of the box */
+}
+
+/* Content overlay styling */
+.box-content1,
+.box-content2,
+.box-content3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  transform: rotateY(90deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hover effect */
+.box1:hover .box-content1,
+.box2:hover .box-content2,
+.box3:hover .box-content3 {
+  transform: rotateY(0);
+}
+
+.final-header {
+  width: 100%;
+  background-color: #0e0e0e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  /* Adjust padding as needed */
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+  /* Adjust margin to create space between content and footer */
+}
+
+.final-header-logo {
+  width: 270px;
+  height: auto;
+  margin-bottom: 20px;
+}

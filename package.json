@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@google-cloud/dialogflow": "^6.8.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.20.0",
+    "pg": "^8.12.0"
+  },
+  "name": "sih",
+  "version": "1.0.0",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

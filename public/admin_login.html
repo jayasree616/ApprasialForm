@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./faculty_login.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap"
+    />
+  </head>
+
+  <body>
+    <div class="Banner">
+      <img class="Banner-img" alt="" src="register.jpg" />
+
+      <button class="btn1" onclick="window.location.href='index.html';">
+        Go to Home
+      </button>
+      <button class="btn2" onclick="window.location.href='login.html';">
+        Faculty login
+      </button>
+
+      <div class="Banner-Content">
+        <form class="login-form" id="admin_login">
+          <h2>Administrator Login</h2>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <button id="adminButton" type="submit">Sign In</button>
+
+          <!-- Error Message -->
+          <div class="error-message">Incorrect email or password</div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

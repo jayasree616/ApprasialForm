@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./landing.css" />
+    <link rel="stylesheet" href="./chat.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap"
+    />
+  </head>
+
+  <body>
+    <div class="Banner">
+      <img class="Banner-img" alt="" src="vvit.jpg" />
+      <button class="btn1" onclick="window.location.href='login.html';">
+        Faculty login
+      </button>
+      <button class="btn2" onclick="window.location.href='admin_login.html';">
+        Admin login
+      </button>
+
+      <div class="Banner-Content">
+        <h1 class="line1" data-aos="slide-up">Welcome to</h1>
+        <h1 class="line2" data-aos="slide-up">Faculty Appraisal</h1>
+      </div>
+    </div>
+
+    <div class="text-content" data-aos="slide-up">
+      <h1 class="about-heading">About our Project</h1>
+      <p>
+        Welcome to our online system for faculty career growth! We've created a
+        simple and efficient way for faculty members to track and showcase their
+        work. Our goal is to make the appraisal process easier, more
+        transparent, and helpful for making informed decisions about faculty
+        development and resources.
+      </p>
+    </div>
+
+    <div class="explore">
+      <h1>Start exploring</h1>
+    </div>
+
+    <div class="slider" data-aos="slide-up">
+      <div class="slider-container">
+        <div class="slider-slide">
+          <img src="class.jpg" alt="Image 3" class="slider-img" />
+          <div class="slider-text">
+            <p>
+              Enhancing Teaching Excellence and Academic Impact - Our platform
+              is committed to supporting faculty members in their quest for
+              excellence in teaching and academic leadership. Through continuous
+              self-evaluation and feedback mechanisms, faculty can gain valuable
+              insights into their classroom engagement, instructional methods,
+              and overall academic impact. This ongoing reflection and
+              assessment enable faculty to refine their teaching practices,
+              ensuring they provide the highest quality education to their
+              students. By fostering a culture of continuous improvement, our
+              system helps faculty members advance in their careers,
+              contributing to both their personal success and the university's
+              mission to deliver outstanding education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="boxes-container">
+      <div class="box1" data-aos="slide-up">
+        <div class="box-img1">
+          <img class="frame-item" alt="" src="rectangle-7@2x.png" />
+        </div>
+        <div class="box-content1">
+          <h3>Upload Your Work</h3>
+          <p>
+            Faculty can upload details of research publications, seminar
+            presentations, teaching activities, and any other relevant academic
+            contributions to ensure a comprehensive appraisal.
+          </p>
+        </div>
+      </div>
+
+      <div class="box2" data-aos="slide-up">
+        <div class="box-img2">
+          <img class="frame-item" alt="" src="rectangle-8@2x.png" />
+        </div>
+        <div class="box-content2">
+          <h3>Track Your Progress</h3>
+          <p>
+            Faculty can monitor updates on research publications, seminar
+            participation, teaching activities, and other academic contributions
+            to review and manage their appraisal status.
+          </p>
+        </div>
+      </div>
+
+      <div class="box3" data-aos="slide-up">
+        <div class="box-img3">
+          <img class="frame-item" alt="" src="rectangle-9@2x.png" />
+        </div>
+        <div class="box-content3">
+          <h3>Get Easy Appraisals</h3>
+          <p>
+            Faculty can simplify their self-assessment process with automatic
+            data updates and streamlined reporting, ensuring a smooth and
+            accurate appraisal experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Icon -->
+    <div id="chat-toggle-btn">
+      <img src="chat-icon.png" alt="Chat Icon" />
+    </div>
+
+    <!-- Chat Interface -->
+    <div id="chat-container">
+      <div id="chatbox"></div>
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-button">Send</button>
+        <span id="close-chat">X</span>
+      </div>
+    </div>
+
+    <script>
+      // Toggle chat box visibility
+      document
+        .getElementById("chat-toggle-btn")
+        .addEventListener("click", () => {
+          const chatContainer = document.getElementById("chat-container");
+          chatContainer.style.display = "block";
+          // Hide the chat icon when chat is opened
+          document.getElementById("chat-toggle-btn").style.display = "none";
+        });
+
+      // Close chat box
+      document.getElementById("close-chat").addEventListener("click", () => {
+        document.getElementById("chat-container").style.display = "none";
+        // Show the chat icon again
+        document.getElementById("chat-toggle-btn").style.display = "flex";
+      });
+
+      document.getElementById("send-button").addEventListener("click", () => {
+        const userInput = document.getElementById("user-input").value;
+        document.getElementById(
+          "chatbox"
+        ).innerHTML += `<div class="user-message">User: ${userInput}</div>`;
+        document.getElementById("user-input").value = "";
+
+        fetch("/dialogflow", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: userInput }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById(
+              "chatbox"
+            ).innerHTML += `<div class="bot-message">Bot: ${data.reply}</div>`;
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

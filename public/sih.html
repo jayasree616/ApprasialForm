@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Self-Appraisal System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+  
+
+   
+    <style>
+      body {
+        background-color: #e9f0f5;
+      }
+      .navbar {
+        margin-bottom: 2rem;
+        background-color: #007bff;
+      }
+      .navbar-brand,
+      .nav-link {
+        color: white !important;
+      }
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("dash.jpg") center/cover no-repeat;
+        padding: 5rem 0;
+        color: white;
+        text-align: center;
+      }
+      h1,
+      p {
+        margin-bottom: 1rem;
+      }
+      #appraisalForm,
+      #adminPanel {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      }
+      #appraisalForm textarea,
+      #appraisalForm input {
+        resize: none;
+      }
+      #adminPanel table {
+        background: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .modal-body img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Faculty Self-Appraisal</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1>Welcome to the Faculty Self-Appraisal System</h1>
+      <p>
+        Log your research publications, seminars, projects, and lectures in
+        real-time. Faculty and Admins have personalized dashboards.
+      </p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+      <!-- Self Appraisal Form (Faculty) -->
+      <div id="appraisalForm">
+        <h3>Self Appraisal Form</h3>
+        <!-- SIH.html -->
+        <form id="appraisalFormInner">
+          <div class="mb-3">
+            <label for="facultyName" class="form-label">Faculty Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="facultyName"
+              name="facultyName"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="employeeCode" class="form-label">Employee Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="employeeCode"
+              name="employeeCode"
+              placeholder="Enter employee code"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="publication" class="form-label"
+              >Research Publications</label
+            >
+            <textarea
+              class="form-control"
+              id="publication"
+              name="publication"
+              rows="3"
+              placeholder="Enter research publications"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="events" class="form-label">Events / Seminars</label>
+            <textarea
+              class="form-control"
+              id="events"
+              name="events"
+              rows="3"
+              placeholder="Enter events or seminars attended"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="projects" class="form-label">Projects</label>
+            <textarea
+              class="form-control"
+              id="projects"
+              name="projects"
+              rows="3"
+              placeholder="Enter project details"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="lectures" class="form-label">Lectures Delivered</label>
+            <textarea
+              class="form-control"
+              id="lectures"
+              name="lectures"
+              rows="3"
+              placeholder="Enter lecture details"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="appraisal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appraisal Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const fetchAppraisalData = async () => {
+        try {
+          const response = await fetch("/appraisals");
+          if (response.ok) {
+            const data = await response.json();
+            renderAppraisalEntries(data);
+          } else {
+            const text = await response.text();
+            console.error("Failed to fetch appraisal data:", text);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+
+      const renderAppraisalEntries = (data) => {
+        const tbody = document.getElementById("appraisalEntries");
+        tbody.innerHTML = "";
+
+        data.forEach((entry) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+          <td>${entry.faculty_name}</td>
+          <td>${entry.employee_code}</td>
+          <td>${entry.publication}</td>
+          <td>${entry.events}</td>
+          <td>${entry.projects}</td>
+          <td>${entry.lectures}</td>
+          <td>${entry.submission_date}</td>
+          
+        `;
+          tbody.appendChild(row);
+        });
+      };
+
+      fetchAppraisalData();
+    </script>
+
+    <style>
+      body {
+        background-color: #f4f7f8;
+      }
+      .container {
+        margin-top: 2rem;
+      }
+      .appraisal-table {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="appraisal-table">
+        <h3>Appraisal Details</h3>
+        <table class="table table-bordered table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Name</th>
+              <th>Employee Code</th>
+              <th>Publication</th>
+              <th>Events</th>
+              <th>Projects</th>
+              <th>Lectures</th>
+              <th>Submission Date</th>
+            </tr>
+          </thead>
+          <tbody id="appraisalEntries">
+            <!-- Dynamic entries will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="appraisals.js"></script>
+  </body>
+</html>
