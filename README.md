@@ -1,19 +1,40 @@
-# Automated-System-for-Career-Advancements-of-the-Faculties-of-Higher-Education
- This web-based platform streamlines the faculty self-appraisal process, making it more efficient and transparent. It helps faculties document their achievements and administrators to make informed decisions.
+# Automated System for Career Advancements of the Faculties of Higher Education
 
-Key Features:
+This web-based platform streamlines the faculty self-appraisal process, making it more efficient and transparent. It helps faculty members document their achievements, and administrators can make informed decisions based on the collected data.
 
-Easy Registration and Login: Faculty members can create accounts and log in securely.
-Comprehensive Data Collection: The system collects information about research publications, events, seminars, projects, and lectures.
-Automated Research Tracking: It automatically tracks research publications using Google Scholar.
-User-Friendly Interface: Faculty can easily input and update their information.
-Secure Data Storage: All data is stored securely to protect privacy.
-Admin Panel: Administrators can view, sort, and download faculty appraisal data.
+## 🚀 Project Overview
 
-Benefits:
+The system allows faculty members to:
+- Easily register and log in.
+- Input data about their research publications, events, seminars, projects, and lectures.
+- Benefit from automated research tracking through Google Scholar.
 
-Saves Time: Faculty don't need to fill out paperwork.
-Improves Accuracy: Automated tracking reduces errors.
-Provides Insights: Administrators can make better decisions about faculty development.
-Supports Paperless Initiatives: Reduces the need for physical documents.
-Overall, this project simplifies the faculty appraisal process, making it more efficient and transparent for both faculty and administrators.
+Administrators can:
+- View, sort, and download faculty appraisal data.
+- Make informed decisions based on accurate and up-to-date information.
+
+## 🛠️ Technologies Used
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Express.js
+- - **Database:** postgress Sql
+- **Research Tracking:** Google Scholar API
+
+## 🚀 Features
+
+### Faculty Features:
+- **Easy Registration and Login:** Secure authentication for faculty members.
+- **Comprehensive Data Collection:** Faculty members can input details about research publications, seminars, projects, and lectures.
+- **Automated Research Tracking:** Automatically track publications using Google Scholar integration.
+- **User-Friendly Interface:** Simple and intuitive interface for faculty to input and update information.
+- **Secure Data Storage:** Data is stored securely, ensuring privacy and protection.
+
+### Admin Features:
+- **Admin Panel:** View, sort, and download the data provided by faculty members.
+- **Decision-Making Support:** Admins can make data-driven decisions about faculty development and career advancement.
+
+# Benefits
+- Time-saving: Faculty members don’t need to fill out paperwork manually.
+- Improved Accuracy: Automated tracking and data entry reduce errors.
+- Informed Decisions: Administrators can make better decisions about faculty development based on accurate data.
+- Paperless Initiative: Reduces the need for physical paperwork, supporting a paperless environment.
